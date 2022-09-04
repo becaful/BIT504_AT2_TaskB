@@ -13,7 +13,7 @@ public class Sprite {
 		return xPosition;
 	}
 	
-	public int getyPoisition() {
+	public int getyPosition() {
 		return yPosition;
 	}
 	
