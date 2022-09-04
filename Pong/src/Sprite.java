@@ -1,10 +1,12 @@
 import java.awt.Color;
+import java.awt.Rectangle;
 
 public class Sprite {
 	private int xPosition, yPosition;
 	private int xVelocity, yVelocity;
 	private int width, height;
 	private Color colour;
+	private int initialXPosition, initialYPosition;
 
 	//Getters for Sprite variables
 	public int getxPosition() {
@@ -46,7 +48,26 @@ public class Sprite {
 	
 	public void setyPosition(int newyPosition) {
 		this.yPosition = newyPosition;
+
 	}
+	
+	 public void setXPosition(int newX, int panelWidth) {
+	     xPosition = newX;
+	     if(xPosition < 0) {
+	    	 xPosition = 0;
+	     }
+	     else if(xPosition + width > panelWidth) {
+	    	 xPosition = panelWidth - width;
+	     }
+	 }
+	 public void setYPosition(int newY, int panelHeight) {
+		 yPosition = newY;
+	      if(yPosition < 0) {
+	          yPosition = 0;
+	      } else if(yPosition + height > panelHeight) {
+	          yPosition = panelHeight - height;
+	      }
+	 }
 	
 	public void setWidth(int newWidth) {
 		this.width = newWidth;
@@ -62,5 +83,19 @@ public class Sprite {
 	 
 	 public void setColour(Color colour) {
          this.colour = colour;
+     }
+	 
+	 public void setInitialPosition(int initialX, int initialY) {
+		 initialXPosition = initialX;
+		 initialYPosition = initialY;
+	 }
+	 
+	 public void resetToIntialPosition() {
+		 setxPosition(initialXPosition);
+		 setyPosition(initialYPosition);
+	 }
+	 
+	 public Rectangle getRectangle() {
+         return new Rectangle(getxPosition(), getyPosition(), getWidth(), getHeight());
      }
 }
