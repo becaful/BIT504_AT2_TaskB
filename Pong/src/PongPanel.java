@@ -19,9 +19,13 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	
 	GameState gameState = GameState.INITIALISING;
 	Ball ball;
+	Paddle paddle1;
+	Paddle paddle2;
 	
 	public void createObjects() {
         ball = new Ball(getWidth(), getHeight());
+        paddle1 = new Paddle(Player.One, getWidth(), getHeight());
+        paddle2 = new Paddle(Player.Two, getWidth(), getHeight());
         
     GameState gameState;
  }
@@ -79,6 +83,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
          paintDottedLine(g);
          if(gameState != GameState.INITIALISING) {
              paintSprite(g, ball);
+             paintSprite(g, paddle1);
+             paintSprite(g, paddle2);
          }
      }
 	
