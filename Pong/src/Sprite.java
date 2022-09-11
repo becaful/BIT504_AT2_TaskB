@@ -5,7 +5,7 @@ public class Sprite {
 	private int xPosition, yPosition;
 	private int xVelocity, yVelocity;
 	private int width, height;
-	private Color colour;
+	private Color colour = Color.WHITE;
 	private int initialXPosition, initialYPosition;
 
 	//Getters for Sprite variables
@@ -90,7 +90,7 @@ public class Sprite {
 		 initialYPosition = initialY;
 	 }
 	 
-	 public void resetToIntialPosition() {
+	 public void resetToInitialPosition() {
 		 setxPosition(initialXPosition);
 		 setyPosition(initialYPosition);
 	 }
