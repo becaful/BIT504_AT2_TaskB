@@ -27,7 +27,6 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
         paddle1 = new Paddle(Player.One, getWidth(), getHeight());
         paddle2 = new Paddle(Player.Two, getWidth(), getHeight());
         
-    GameState gameState;
  }
  
 	private void update() {
